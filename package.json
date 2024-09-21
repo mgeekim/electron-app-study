@@ -4,10 +4,17 @@
   "description": "Study code for electron",
   "main": "main.js",
   "scripts": {
-    "start": "electron-forge start",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start": "webpack --mode development && electron .",
+    "build": "webpack --mode production && electron-forge make"
+  },
+  "build": {
+    "files": [
+      "dist/**/*",
+      "main.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   },
   "keywords": [],
   "author": "",
