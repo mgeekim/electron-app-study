@@ -1,7 +1,7 @@
 {
   "name": "electron-app-study",
   "version": "1.0.0",
-  "description": "",
+  "description": "Study code for electron",
   "main": "index.js",
   "scripts": {
     "start": "electron-forge start",
