@@ -5,9 +5,13 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack --mode development && electron .",
-    "build": "webpack --mode production && electron-forge make"
+    "build": "webpack --mode production && electron-builder",
+    "build:win64": "webpack --mode production && electron-builder --win portable --x64"
   },
   "build": {
+    "win": {
+      "target": "nsis"
+    },
     "files": [
       "dist/**/*",
       "main.js"
@@ -31,8 +35,10 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.5.0",
     "@electron-forge/plugin-fuses": "^7.5.0",
     "@electron/fuses": "^1.8.0",
+    "7zip-bin": "^5.2.0",
     "babel-loader": "^9.2.1",
     "electron": "^32.1.2",
+    "electron-builder": "^25.0.5",
     "html-webpack-plugin": "^5.6.0",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4",
@@ -40,6 +46,7 @@
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1",
+    "ffmpeg-static": "^5.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }
